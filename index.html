@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cihan Yasar | Designer Portfolio | İzmir & Warsaw</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Font and base styling */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        :root {
+            --primary-color: #3b82f6; /* Blue-500 */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1f2937; /* Dark gray for text */
+            scroll-behavior: smooth;
+        }
+        .section-padding {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+        /* Custom class for the primary button style */
+        .btn-primary {
+            @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-blue-600 hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-[1.02];
+        }
+        /* Style for portfolio image hover effect */
+        .portfolio-item img {
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+        /* Scroll indicator for smooth navigation */
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        .skill-badge {
+            @apply inline-flex items-center px-4 py-1.5 text-sm font-medium bg-white text-blue-600 rounded-full shadow-md border border-blue-100;
+        }
+
+        /* Utility for smooth transition on JS elements */
+        .transition-max-height {
+            transition: max-height 0.5s ease-in-out;
+            overflow: hidden;
+        }
+        /*
+        Custom wave divider styles removed.
+        We are now using inline SVG directly in the HTML for reliability.
+        */
+
+        /* Specific styles for the profile image to use the uploaded image */
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the circular area */
+            object-position: center; /* Centers the image within the area */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Mobile Menu Toggle (Invisible on Desktop) --><div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-gray-900 bg-opacity-95 flex flex-col justify-center items-center lg:hidden transition-opacity duration-300">
+        <button id="close-menu" class="absolute top-6 right-6 text-white text-4xl">&times;</button>
+        <nav class="space-y-8 text-center">
+            <a href="#about" class="block text-3xl font-bold text-white hover:text-blue-400 transition nav-link" onclick="toggleMenu()">About Me</a>
+            <a href="#portfolio" class="block text-3xl font-bold text-white hover:text-blue-400 transition nav-link" onclick="toggleMenu()">Portfolio</a>
+            <a href="#skills" class="block text-3xl font-bold text-white hover:text-blue-400 transition nav-link" onclick="toggleMenu()">Services & Skills</a>
+            <a href="#contact" class="block text-3xl font-bold text-white hover:text-blue-400 transition nav-link" onclick="toggleMenu()">Contact</a>
+        </nav>
+    </div>
+
+    <!-- 1. HEADER / NAVIGATION --><header class="bg-white shadow-md fixed w-full top-0 z-30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Name --><a href="#" class="flex-shrink-0 text-2xl font-extrabold text-gray-900 tracking-tight">
+                    Cihan <span class="text-blue-600">Yasar</span>
+                </a>
+
+                <!-- Desktop Navigation --><nav class="hidden lg:flex space-x-10 text-gray-600 font-medium">
+                    <a href="#about" class="hover:text-blue-600 transition nav-link">About Me</a>
+                    <a href="#portfolio" class="hover:text-blue-600 transition nav-link">Portfolio</a>
+                    <a href="#skills" class="hover:text-blue-600 transition nav-link">Services & Skills</a>
+                    <a href="#contact" class="hover:text-blue-600 transition nav-link">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button --><div class="lg:hidden">
+                    <button id="open-menu" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-16">
+
+        <!-- 2. HERO / ABOUT SECTION --><section id="about" class="bg-white section-padding relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-12">
+                
+                <!-- Text Content --><div class="lg:w-1/2">
+                    <p class="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-2">UI/UX & Visual Design</p>
+                    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight mb-6">
+                        I craft brands and <span class="text-blue-600">intuitive experiences</span>.
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Hello, I'm Cihan Yasar. I'm an aspiring Visual and Product Designer (UI/UX) from İzmir, currently living and creating in the heart of Warsaw.
+                        My work blends modern European utility with the vibrant energy of Eastern aesthetics, resulting in designs that are both beautiful and effective.
+                        I specialize in digital design and branding.
+                    </p>
+                    <a href="#portfolio" class="btn-primary">
+                        View My Work
+                    </a>
+                </div>
+
+                <!-- Image / Placeholder (Professional placeholder added) --><div class="lg:w-1/2 flex justify-center">
+                    <div class="w-72 h-72 rounded-full overflow-hidden shadow-2xl bg-gray-300 flex items-center justify-center border-4 border-blue-600">
+                        <!-- Professional placeholder image --><img class="profile-image" src="https://placehold.co/600x600/1e40af/ffffff/png?text=Cihan+Yasar" alt="Professional profile photo placeholder">
+                    </div>
+                </div>
+
+            </div>
+            <!-- Wave Divider between About (White) and Portfolio (Gray) --><div class="absolute bottom-0 left-0 w-full h-10" style="transform: translateY(1px);">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none" class="w-full h-full">
+                    <!-- Path filled with the color of the NEXT section (bg-gray-100: #f7f7f7) --><path fill="#f7f7f7" d="M0,64L48,58.7C96,53,192,43,288,42.7C384,43,480,53,576,64C672,75,768,85,864,80C960,75,1000,75,1000,75L1000,100L0,100L0,64Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- 3. PORTFOLIO GRID --><section id="portfolio" class="bg-gray-100 section-padding relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-extrabold text-gray-900">Portfolio | Featured Projects</h2>
+                    <p class="mt-4 text-xl text-gray-600">UI/UX, branding, and experience creation for clients in Poland and Turkey.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 --><div class="portfolio-item bg-white rounded-xl shadow-xl overflow-hidden cursor-pointer">
+                        <div class="h-56 bg-blue-100 overflow-hidden">
+                            <img class="w-full h-full object-cover" src="https://placehold.co/600x400/3b82f6/ffffff?text=App+UI+Design" alt="Mobile App UI Design Mockup" onerror="this.onerror=null; this.src='https://placehold.co/600x400/3b82f6/ffffff?text=Project+1';" />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900">Mobile App "Polish in a Nutshell"</h3>
+                            <p class="mt-2 text-gray-500 text-sm">UI/UX Design for a language learning application.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 --><div class="portfolio-item bg-white rounded-xl shadow-xl overflow-hidden cursor-pointer">
+                        <div class="h-56 bg-blue-100 overflow-hidden">
+                            <img class="w-full h-full object-cover" src="https://placehold.co/600x400/10b981/ffffff?text=Brand+Identity" alt="Brand Identity Mockup" onerror="this.onerror=null; this.src='https://placehold.co/600x400/10b981/ffffff?text=Project+2';" />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900">Turkish Restaurant Rebranding in Warsaw</h3>
+                            <p class="mt-2 text-gray-500 text-sm">Complete visual identity and brand strategy.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 --><div class="portfolio-item bg-white rounded-xl shadow-xl overflow-hidden cursor-pointer">
+                        <div class="h-56 bg-blue-100 overflow-hidden">
+                            <img class="w-full h-full object-cover" src="https://placehold.co/600x400/ef4444/ffffff?text=Website+Development" alt="SaaS Website Layout Mockup" onerror="this.onerror=null; this.src='https://placehold.co/600x400/ef4444/ffffff?text=Project+3';" />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900">Landing Page for FinTech SaaS</h3>
+                            <p class="mt-2 text-gray-500 text-sm">Conversion-optimized website design.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 --><div class="portfolio-item bg-white rounded-xl shadow-xl overflow-hidden cursor-pointer">
+                        <div class="h-56 bg-blue-100 overflow-hidden">
+                            <img class="w-full h-full object-cover" src="https://placehold.co/600x400/f59e0b/ffffff?text=Data+Visualization" alt="Data Dashboard Mockup" onerror="this.onerror=null; this.src='https://placehold.co/600x400/f59e0b/ffffff?text=Project+4';" />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900">E-commerce Analytics Dashboard</h3>
+                            <p class="mt-2 text-gray-500 text-sm">Design of interactive data panels and visualization.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 --><div class="portfolio-item bg-white rounded-xl shadow-xl overflow-hidden cursor-pointer">
+                        <div class="h-56 bg-blue-100 overflow-hidden">
+                            <img class="w-full h-full object-cover" src="https://placehold.co/600x400/8b5cf6/ffffff?text=Icon+Set+Creation" alt="Iconography Set Mockup" onerror="this.onerror=null; this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Project+5';" />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900">Icon Set for a Logistics Company</h3>
+                            <p class="mt-2 text-gray-500 text-sm">Minimalist and scalable SVG library.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 --><div class="portfolio-item bg-white rounded-xl shadow-xl overflow-hidden cursor-pointer">
+                        <div class="h-56 bg-blue-100 overflow-hidden">
+                            <img class="w-full h-full object-cover" src="https://placehold.co/600x400/374151/ffffff?text=Editorial+Design" alt="Magazine Layout Mockup" onerror="this.onerror=null; this.src='https://placehold.co/600x400/374151/ffffff?text=Project+6';" />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900">Editorial Design for "İzmir Culture Now"</h3>
+                            <p class="mt-2 text-gray-500 text-sm">Text layout and graphic design for the magazine.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Wave Divider between Portfolio (Gray) and Skills (White) --><div class="absolute bottom-0 left-0 w-full h-10" style="transform: translateY(1px);">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none" class="w-full h-full">
+                    <!-- Path filled with the color of the NEXT section (bg-white: #ffffff) --><path fill="#ffffff" d="M0,32L48,37.3C96,43,192,53,288,58.7C384,64,480,64,576,53.3C672,43,768,21,864,10.7C960,0,1000,0,1000,0L1000,100L0,100Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- 4. SKILLS & SERVICES --><section id="skills" class="bg-white section-padding relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-extrabold text-gray-900">Services & Tools</h2>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Services --><div>
+                        <h3 class="text-2xl font-bold text-blue-600 mb-6 border-b pb-2">My Services</h3>
+                        <ul class="space-y-4 text-gray-700 text-lg">
+                            <li class="flex items-start"><svg class="flex-shrink-0 mr-3 h-6 w-6 text-blue-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 005.9 21h12.2c.472-1.996.175-4.22.18-4.25"></path></svg>
+                                UI/UX Design: Creating intuitive interfaces, wireframes, and prototypes.
+                            </li>
+                            <li class="flex items-start"><svg class="flex-shrink-0 mr-3 h-6 w-6 text-blue-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4c-.813-2.071-2.05-3.66-3.83-4.5M12 6c.813 2.071 2.05 3.66 3.83 4.5M18 10a2 2 0 012 2v3a2 2 0 01-2 2H6a2 2 0 01-2-2v-3a2 2 0 012-2h12zm-3 4H9"></path></svg>
+                                Branding & Visual Identity: Logo design, color palettes, typography, and style guides.
+                            </li>
+                            <li class="flex items-start"><svg class="flex-shrink-0 mr-3 h-6 w-6 text-blue-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                                Digital Illustration & Graphics: Creating graphics for social media and marketing needs.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Skills/Tools --><div>
+                        <h3 class="text-2xl font-bold text-blue-600 mb-6 border-b pb-2">Tools and Technologies</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="skill-badge">Figma (Advanced)</span>
+                            <span class="skill-badge">Adobe XD</span>
+                            <span class="skill-badge">Adobe Photoshop</span>
+                            <span class="skill-badge">Adobe Illustrator</span>
+                            <span class="skill-badge">Prototyping</span>
+                            <span class="skill-badge">User Research</span>
+                            <span class="skill-badge">Branding</span>
+                            <span class="skill-badge">HTML/CSS</span>
+                            <span class="skill-badge">Tailwind CSS (Basics)</span>
+                        </div>
+                        <p class="mt-6 text-gray-500 text-sm italic">Fluent in Turkish (Native), English (C1), and Polish (A2/B1).</p>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Wave Divider between Skills (White) and Contact (Blue) --><div class="absolute bottom-0 left-0 w-full h-10" style="transform: translateY(1px);">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none" class="w-full h-full">
+                    <!-- Path filled with the color of the NEXT section (bg-blue-600: #3b82f6) --><path fill="#3b82f6" d="M0,64L48,58.7C96,53,192,43,288,42.7C384,43,480,53,576,64C672,75,768,85,864,80C960,75,1000,75,1000,75L1000,100L0,100L0,64Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- 5. CONTACT / CTA --><section id="contact" class="bg-blue-600 text-white section-padding">
+            <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold mb-4">Want to Discuss a Project?</h2>
+                <p class="text-xl mb-8 opacity-90">
+                    I am open to new challenges and collaborations, both locally in Warsaw and remotely.
+                    Send me a message to start a conversation about your idea.
+                </p>
+
+                <!-- Action Button (Mailto link for static site) --><a href="mailto:ignacyjanuszek@gmail.com?subject=Design%20Project%20Inquiry%20from%20Cihan's%20Portfolio" class="inline-flex items-center justify-center px-8 py-4 border border-white text-lg font-semibold rounded-lg text-blue-600 bg-white hover:bg-gray-100 transition duration-300 ease-in-out">
+                    Send Me an Email
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER --><footer class="bg-gray-900 text-gray-400 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="text-center md:text-left mb-4 md:mb-0">
+                <p>&copy; 2025 Cihan Yasar. All rights reserved.</p>
+                <p class="text-sm">Designed in Warsaw with inspiration from İzmir.</p>
+            </div>
+            
+            <div class="flex space-x-6">
+                <!-- Social Media Links (Placeholders) --><a href="#" class="hover:text-white transition">LinkedIn</a>
+                <a href="#" class="hover:text-white transition">Behance</a>
+                <a href="#" class="hover:text-white transition">Dribbble</a>
+                <!-- Updated phone number and href --><a href="tel:+48885176174" class="hover:text-white transition">+48 885 176 174</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript block changed to type="module" to allow imports --><script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // --- JavaScript for Mobile Menu Toggle ---
+        const mobileMenu = document.getElementById('mobile-menu');
+        const openMenuButton = document.getElementById('open-menu');
+        const closeMenuButton = document.getElementById('close-menu');
+
+        function toggleMenu() {
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('flex');
+            } else {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            }
+        }
+
+        openMenuButton.addEventListener('click', toggleMenu);
+        closeMenuButton.addEventListener('click', toggleMenu);
+
+        // Optional: Close menu on escape key
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                toggleMenu();
+            }
+        });
+
+        // Get the firebase config and init auth for the security rules
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        if (Object.keys(firebaseConfig).length > 0 && firebaseConfig.apiKey) {
+            
+            // Initialize Firebase App
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth(app);
+            const db = getFirestore(app);
+            setLogLevel('Debug'); // Enable Firestore logging
+
+            // Authenticate the user
+            async function authenticate() {
+                try {
+                    if (initialAuthToken) {
+                        await signInWithCustomToken(auth, initialAuthToken);
+                        console.log('Firebase authenticated successfully with custom token.');
+                    } else {
+                        await signInAnonymously(auth);
+                        console.log('Firebase authenticated successfully anonymously.');
+                    }
+                } catch (error) {
+                    console.error("Firebase Authentication Error:", error);
+                }
+            }
+            authenticate();
+        } else {
+            console.log("Firebase configuration is missing or invalid. The app will run without database connectivity.");
+        }
+    </script>
+</body>
+</html>
